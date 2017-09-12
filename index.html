@@ -17,14 +17,10 @@
 
     <div class="container">
 
-        
-
     <!-- Slider -->
     <div id="q1-container">
-        <input id="ex8" data-slider-id='ex1Slider' type="text" data-slider-min="340" data-slider-max="1710" data-slider-step="1" data-slider-value="1000"/>
+        <input id="ex8" data-slider-id='ex1Slider' type="text" data-slider-min="340" data-slider-max="1710" data-slider-step="5" data-slider-value="1000"/>
     </div>
-
-
 
     <!-- Tick marks -->
     <div class="tick">
@@ -62,141 +58,24 @@
 		  tooltip: 'always'
       });  
 
-
-
-
     // Hide 'drag to move' text on hover
       $(".slider-handle").hover(function () {
         $(".guess").fadeOut();
       });
 
-    // Hide 'drag to move' text on button click
-      $(".btn1").click(function () {
-        $(".guess").fadeOut();
-      });
+    // get value of slider on click and move
+	 $( "#ex8").on("change", function() {var guess_value = $('#ex8').data('slider').getValue();
+	 console.log(guess_value)} );
 
-    // Changes CSS style of the tooltip
-      $(function () {
-			$(".btn1").click(function () {
-				$(".tooltip-inner").css('background-color', '#FF9933');
-        $(".tooltip-arrow").css('border-top-color', '#FF9933');
-        $(".tooltip-min .tooltip-inner").css('background-color', '#d4d8da');
-        $(".tooltip-min .tooltip-arrow").css('border-top-color', '#d4d8da');
-        $(".tooltip-main .tooltip-arrow").toggleClass('flip');
-			});
 
-			$(".btn2").click(function () {
-				$(".tooltip-inner").css('background-color', '#d4d8da');
-        $(".tooltip-arrow").css('border-top-color', '#d4d8da');
-        $(".tooltip-main .tooltip-arrow").toggleClass('flip');
-			});
-
-      });
-	  
 	} //end initialise
-
-
-
-  function move() {
-	
-	//don't allow the sliders to be moveable once guessed
-	d3.select(".slider").style("pointer-events","none");
-	
-
-		  
-	 //record width and original guess	  
-		  
-	 guess_width = $(".slider-selection").css('width');
-	 
-	 guess_left = $(".tooltip-main").css('left');
-	 
-	 
-	 
-	 guess_marginleft = $(".tooltip-main").css('margin-left');
-
-	 guess_value = $('#ex8').data('slider').getValue();
-	 
-	 console.log(guess_value)
-	  
-	// Hides the tooltip temporarily
-	
-	  d3.select(".tooltip-main").style("opacity",0);
-
-    d3.select(".tooltip-main")
-      .style("top","82px").style("margin-left","-37.5px");
-    d3.select(".tooltip-main .tooltip-arrow")
-      .style("top","0px");
-
-
-    // Animates slider to set value
-
-      $('.slider-selection').each(function (i, v) {
-        var grow_original = $(this).css('width')
-      $(this).css('width', guess_width);
-      $(this).show();
-      $(this).animate({width: grow_original}, 1500);
-      });
-	  
-	  // Show tooltip on reveal
-	   d3.select(".tooltip-main").transition().delay(4000).duration(3000).style("opacity",1);
-	 
-	  
-	  // Set guess tooltip
-	  d3.select(".tooltip-min")
-	  	.style("left", guess_left)
-		  .style("top","10px")
-		  .style("margin-left",guess_marginleft)
-		  .style("display","block")
-		  .classed("top", true)
-		  .classed("bottom",false);
-		
-	  d3.select(".tooltip-min")
-	  	.select(".tooltip-inner")
-		.html(guess_value);
-		
-	  d3.selectAll(".tooltip-min").style("opacity",1);	
-	  d3.selectAll(".tooltip-main").transition().delay(1000).duration(500).style("opacity",1);
-
-		
-		
-    // Hides slider handle
-
-	  $(".slider-handle").hide();
-	  
-	// Calculate quiz score, pass in current guess and answer
-	
-    //use pym to create iframed chart dependent on specified variables
-          drawGraphic();
-      }
-
-
-
 
     // Draw chart 
     var pymChild = null;
-	var dates,
-	dateKeys,
-	dateParse = d3.timeParse("%Y");
+
     var question = 0;
 
-	function type(d, i, columns) {		
-			
-				if (!dates) 
-				dateKeys = columns.slice(2), 
-				dates = dateKeys.map(dateParse);			
-			 
-			var c = {name: d.name, code: d.code, values: null};
-		
-			c.values = dateKeys.map(function(k, i) { 
-					return {
-						category: c, 
-						date: dates[i], 
-						value: +d[k]
-					}
-			});
-				
-				  return c;
-				}
+	function type() {}
 	
 	
     function drawGraphic(width) {
