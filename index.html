@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Slider UI</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-slider.css" rel="stylesheet">
+    <link rel="stylesheet" href="lib/globalStyle.css" />
+    <link href="css/styles.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+        
+
+    <!-- Slider -->
+    <div id="q1-container">
+        <input id="ex8" data-slider-id='ex1Slider' type="text" data-slider-min="340" data-slider-max="1710" data-slider-step="1" data-slider-value="1000"/>
+    </div>
+
+
+
+    <!-- Tick marks -->
+    <div class="tick">
+        <div class="zero"><p class="tick-one">£340</p></div>
+        <div class="one-hundred"><p class="tick-two">£1710</p></div>
+        <div class="guess"><p> Drag to guess</p></div>
+    </div>
+
+     
+    <!-- Mobile annotations -->
+    <div id="keypoints">
+    </div>
+
+    </div><!--Container-->
+
+    
+    <!--Library-->
+
+    <script src="https://cdn.ons.gov.uk/vendor/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/bootstrap-slider.js"></script>
+    <script src="https://cdn.ons.gov.uk/vendor/d3/4.2.7/d3.js"></script> 
+    <script src="lib/modernizr.svg.min.js" type="text/javascript"></script>
+    <script src="https://cdn.ons.gov.uk/vendor/pym/0.4.2/pym.min.js" type="text/javascript"></script>
+    <script src="lib/footer.js"></script>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    <script>
+	
+	function initialise() {
+	
+	 pymChild = new pym.Child();
+
+    // Bootstrap slider style
+      $("#ex8").slider({
+		  tooltip: 'always'
+      });  
+
+
+
+
+    // Hide 'drag to move' text on hover
+      $(".slider-handle").hover(function () {
+        $(".guess").fadeOut();
+      });
+
+    // Hide 'drag to move' text on button click
+      $(".btn1").click(function () {
+        $(".guess").fadeOut();
+      });
+
+    // Changes CSS style of the tooltip
+      $(function () {
+			$(".btn1").click(function () {
+				$(".tooltip-inner").css('background-color', '#FF9933');
+        $(".tooltip-arrow").css('border-top-color', '#FF9933');
+        $(".tooltip-min .tooltip-inner").css('background-color', '#d4d8da');
+        $(".tooltip-min .tooltip-arrow").css('border-top-color', '#d4d8da');
+        $(".tooltip-main .tooltip-arrow").toggleClass('flip');
+			});
+
+			$(".btn2").click(function () {
+				$(".tooltip-inner").css('background-color', '#d4d8da');
+        $(".tooltip-arrow").css('border-top-color', '#d4d8da');
+        $(".tooltip-main .tooltip-arrow").toggleClass('flip');
+			});
+
+      });
+	  
+	} //end initialise
+
+
+
+  function move() {
+	
+	//don't allow the sliders to be moveable once guessed
+	d3.select(".slider").style("pointer-events","none");
+	
+
+		  
+	 //record width and original guess	  
+		  
+	 guess_width = $(".slider-selection").css('width');
+	 
+	 guess_left = $(".tooltip-main").css('left');
+	 
+	 
+	 
+	 guess_marginleft = $(".tooltip-main").css('margin-left');
+
+	 guess_value = $('#ex8').data('slider').getValue();
+	 
+	 console.log(guess_value)
+	  
+	// Hides the tooltip temporarily
+	
+	  d3.select(".tooltip-main").style("opacity",0);
+
+    d3.select(".tooltip-main")
+      .style("top","82px").style("margin-left","-37.5px");
+    d3.select(".tooltip-main .tooltip-arrow")
+      .style("top","0px");
+
+
+    // Animates slider to set value
+
+      $('.slider-selection').each(function (i, v) {
+        var grow_original = $(this).css('width')
+      $(this).css('width', guess_width);
+      $(this).show();
+      $(this).animate({width: grow_original}, 1500);
+      });
+	  
+	  // Show tooltip on reveal
+	   d3.select(".tooltip-main").transition().delay(4000).duration(3000).style("opacity",1);
+	 
+	  
+	  // Set guess tooltip
+	  d3.select(".tooltip-min")
+	  	.style("left", guess_left)
+		  .style("top","10px")
+		  .style("margin-left",guess_marginleft)
+		  .style("display","block")
+		  .classed("top", true)
+		  .classed("bottom",false);
+		
+	  d3.select(".tooltip-min")
+	  	.select(".tooltip-inner")
+		.html(guess_value);
+		
+	  d3.selectAll(".tooltip-min").style("opacity",1);	
+	  d3.selectAll(".tooltip-main").transition().delay(1000).duration(500).style("opacity",1);
+
+		
+		
+    // Hides slider handle
+
+	  $(".slider-handle").hide();
+	  
+	// Calculate quiz score, pass in current guess and answer
+	
+    //use pym to create iframed chart dependent on specified variables
+          drawGraphic();
+      }
+
+
+
+
+    // Draw chart 
+    var pymChild = null;
+	var dates,
+	dateKeys,
+	dateParse = d3.timeParse("%Y");
+    var question = 0;
+
+	function type(d, i, columns) {		
+			
+				if (!dates) 
+				dateKeys = columns.slice(2), 
+				dates = dateKeys.map(dateParse);			
+			 
+			var c = {name: d.name, code: d.code, values: null};
+		
+			c.values = dateKeys.map(function(k, i) { 
+					return {
+						category: c, 
+						date: dates[i], 
+						value: +d[k]
+					}
+			});
+				
+				  return c;
+				}
+	
+	
+    function drawGraphic(width) {
+      
+       var threshold_md = 590;
+       var threshold_sm = dvc.optional.mobileBreakpoint; 
+      
+        		
+		if (pymChild) {
+           setTimeout(function(){ pymChild.sendHeight()},200)
+        } 
+		    
+
+    } //end drawGraphic()
+
+	
+  
+
+
+
+    //check whether browser can cope with svg 
+    if (Modernizr.svg) {
+       //load config 
+      d3.json("config.json", function(error, config) {
+      dvc=config
+        
+        //load chart data
+        d3.csv(dvc.essential.graphic_data_url[question], type, function(error, data) {
+          graphic_data = data;
+		  
+		  pymChild = new pym.Child({ renderCallback: initialise });
+                    
+        });
+      })
+
+    } else {
+       //use pym to create iframe containing fallback image (which is set as default)
+       pymChild = new pym.Child();
+      if (pymChild) {
+            pymChild.sendHeight();
+        }
+    }
+
+
+    //google analytics 
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37894017-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  
+	  </script>
+
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+  </body>
+</html>
