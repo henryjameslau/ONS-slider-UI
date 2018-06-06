@@ -1,36 +1,9 @@
-	body {
-		max-width:700px;
-		margin:0px auto;
-	}
-	
-	#graphic {
-		max-width:650px;
-		margin:0px auto;
-	}
-	
-	.tick text {
-      fill: #414042;
-      font-family: 'Open Sans', Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
+		body {
+			max-width:700px;
+			margin:0px auto;
+		}
 
-  	.codes{
-      stroke: #d1d3d4;
-      fill:none;
-      stroke-width: 1px !important;
-    }
-  	
-    .quest_line {
-      stroke: #FF9933 !important;
-      stroke-width: 3px !important;
-    }
-
-    .category--hover {
-      stroke: #5F7682;
-      stroke-width: 3px !important;
-    } 
-  
-    .container { 
+    .container {
       font-family: 'Open Sans', Arial, sans-serif;
       max-width: 800px !important;
       padding-top: 100px;
@@ -40,16 +13,7 @@
       position: relative;
     }
 
-    #finalResult {
-      font-family: 'Open Sans', Arial, sans-serif;
-      max-width: 800px;
-      padding-top: 10px;
-      padding-left: 0;
-      padding-right: 0;
-      text-align: center;
-      position: relative;
-      margin: auto;
-    }
+		/*  SLIDER CSS */
 
     .tooltip-inner {
       font-family: 'Open Sans', Arial, sans-serif;
@@ -70,28 +34,6 @@
       margin-top: -53px !important;
     }
 
-    #tooltip {
-      font-size: 16px;
-      font-family: 'Open Sans', Arial, sans-serif;
-      font-weight: 400;
-      color: #414042 !important;
-      -webkit-font-smoothing: antialiased;
-    }
-
-
-    .tick-marks {
-      width: 100%;
-      height: auto;
-      float:left;
-      position: relative;
-    }
-
-    .explainer-text {
-      color: #414042;
-      -webkit-font-smoothing: antialiased;
-      font-size: 16px;
-      margin-bottom: 24px;
-    }
 
     .zero {
       width: 50%;
@@ -138,184 +80,161 @@
       color: #fff;
     }
 
-    .btn1, .btn2, .btn3 {
-      font-family: "Open Sans",Helvetica,Arial,sans-serif;
-      font-weight: 400;
-      font-size: 16px;
-      display: inline-block;
-      width: auto;
-      cursor: pointer;
-      padding: 8px 16px 10px 16px;
-      border: 0 none;
-      text-align: center;
-      -webkit-appearance: none;
-      transition: background-color 0.25s ease-out;
-      text-decoration: none;
-      line-height: 24px;
-      -webkit-font-smoothing: antialiased;
-}
-    
-    .btn-primary1:hover,.btn-primary1:focus {
-      background-color:#0b5d30;
-    }
-
     p {
       color: #414042;
       -webkit-font-smoothing: antialiased;
       font-size: 16px;
     }
 
-    .current {
-      font-size: 16px;
-    }
-
-    .question {
-      font-size: 21px;
-      padding-bottom: 48px;
-      font-weight: 700;
-    }
-
-    #q1-answer {
-      width: 100%;
-      background-color: #00a7a3;
-      border-radius: 10px;
-    }
-
-    #q1-bar {
-      width: 33.333333333%;
-      height: 14px;
-      background-color: #004358;
-      border-top-left-radius: 10px;
-      border-bottom-left-radius: 10px;
-      margin-top: 23px;
-      margin-bottom: -6px;
-    }
-
     .tooltip-inner::before {
     content: "£";
-    }
-
-    .chart-line {
-      stroke-width: 2px !important;
     }
 
     .hide{
       display: none;
     }
 
-    #next-button {
-      margin-top: 10px;
-	  overflow:hidden;
+		/*  Input boxes */
 
-    }
+		input {
+		  height: 40px;
+		}
 
-    .flip {
-      -webkit-transform: rotate(180deg);
-      -moz-transform: rotate(180deg);
-      -o-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-      transform: rotate(180deg);
-      transform: rotate(180deg);
-    }
+		.input {
+		  margin-bottom: 10px;
+		}
 
-    #additional-text {
-      margin: 10px 0;
-      display: none;
-    }
+		.pound {
+		  display: inline;
+		  height: 40px;
+		  width: 40px;
+		  font-size: 21px;
+		  padding-top: 5px;
+		  background-color: #3b7a9e;
+		  color: #fff;
+		  text-align: center;
+		  float: left;
+		  font-weight: 600;
+		}
 
-    #twitter {
-      padding-right: 10px;
-      padding-bottom: 16px;
-    }
+		.arrow{
+		  display: inline;
+		  height: 40px;
+		  width: 40px;
+		  font-size: 16px;
+		  padding-top: 8px;
+		  background-color: #3b7a9e;
+		  color: #fff;
+		  text-align: center;
+		  float: left;
+		}
 
-    #facebook {
-      padding-bottom: 16px;
-    }
+		.form-control {
+		  height: 40px !important;
+		  width:90% !important;
+		}
 
-    #source-link p {
-      color: #414042;
-      -webkit-font-smoothing: antialiased;
-      font-size: 16px;
-      font-family: "Open Sans",Helvetica,Arial,sans-serif;
-      padding-top: 32px;
-      padding-left: 0;
-      padding-right: 0;
-      margin: auto;
-      position: relative;
-      max-width: 800px;
-	  overflow:hidden;
-    }
+		.input-window {
+		  display: inline;
+		}
 
-    a:link {
-      color: #206095 !important;
-    }
+		input {
+		  font-size: 16px !important;
+		  text-align: right;
+		  padding-right:0px !important;
+		}
 
-    a:hover {
-      color: #206095;
-      text-decoration: underline;
-    }
+		/*  END INPUT BOX */
 
-     a:hover {
-      color: #206095;
-      text-decoration: underline;
-    }
 
-    #next-button {
-      width: 137px;
-    }
+		/*  Start the DROPDOWN BITS */
 
-    #result-button {
-      width: 144px;
-    }
+		.select2-dropdown {
+			 border: 1px solid #FF9933;
+		 }
 
-    #score {
-      font-size: 35px;
-      font-weight: 700;
-      -webkit-font-smoothing: antialiased;
-      margin-top: -8px;
-    }
+		 .select2-search__field{
+			 border: 1px solid #FF9933!important;
+		 }
 
-    #restartBtn {
-      margin-top: 32px;
-    }
+		 .select2-container--default .select2-selection--single {
+				 background-color: #EDEDED!important;
+				 border: 1px #FF9933 !important;
+		 }
 
-    .fb-share-button {
-      vertical-align: top;
+		 .select2-container .select2-selection--single {
+				 height: 36px!important;
+		 }
 
-    }
+		 .select2-container--default .select2-selection--single .select2-selection__placeholder {
+				 color: #4A494B!important;
+		 }
 
-    #scoreTxt {
-      font-size: 35px;
-      font-weight: 700;
-      padding-bottom: 8px;
-    }
+		 .select2-container--default .select2-selection--single .select2-selection__rendered {
+				 line-height: 36px!important;
+		 }
 
-    #scoreTxtTwo {
-      font-size: 21px;
-      font-weight: 400;
-      padding-bottom: 16px;
-    }
+		 .select2-dropdown.select2-dropdown--below{
+					 /* width: 148px !important; */
+		 }
 
-    #twitter-widget-0 {
-      vertical-align: top !important;
-      margin-right: 5px;
-    }
+		 .select2-container--default .select2-selection--single{
+				 /* padding:6px; */
+				 /* height: 37px; */
+				 /* width: 148px; */
+				 /* font-size: 1.2em; */
+				 position: relative;
+		 }
 
-    #fb-share-button {
-      margin-left: 5px;
-    }
+		 .select2-container--default .select2-selection--single .select2-selection__arrow {
+				 background-image: -khtml-gradient(linear, left top, left bottom, from(#3b7a9e), to(#3b7a9e));
+				 background-image: -moz-linear-gradient(top, #3b7a9e, #3b7a9e);
+				 background-image: -ms-linear-gradient(top, #3b7a9e, #3b7a9e);
+				 background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3b7a9e), color-stop(100%, #3b7a9e));
+				 background-image: -webkit-linear-gradient(top, #3b7a9e, #3b7a9e);
+				 background-image: -o-linear-gradient(top, #3b7a9e, #3b7a9e);
+				 background-image: linear-gradient(#3b7a9e, #3b7a9e);
+				 /* width: 40px; */
+				 /* color: #fff; */
+				 /* font-size: 1.3em; */
+				 padding: 0px 6px;
+				 /* height: 27px; */
+				 position: absolute;
+				 top: 0px;
+				 right: 0px;
+				 /* width: 20px; */
+		 }
 
-@media (max-width:767px) {
+		 /*.select2-container--default .select2-selection--single .select2-selection__rendered {
+			 line-height: 25px !important;
+		 }*/
 
-    #tooltip {
-      font-size: 14px;
-    }
+		 .select2-selection__arrow b {
+			 border-color: white transparent transparent transparent !important;
+			 border-width: 7px 6px 0px 6px !important;
+			 left: 48% !important;
+			 top: 45% !important;
+		 }
 
-}
+		 .select2-selection__clear {
+			 padding-right: 15px !important;
+			 color: #3b7a9e !important;
+			 font-size: 25px !important;
+			 line-height: 24px !important;
+		 }
 
-@media (max-width:480px) {
-    #tooltip {
-      font-size: 12px;
-    }
 
-}
+		 .select2-container--default .select2-selection--single .select2-selection__arrow {
+				 height: 36px!important;
+				 width: 36px!important;
+		 }
+
+		 .select2-selection__clear {
+				 padding-right: 25px !important;
+				 color: #3b7a9e !important;
+				 font-size: 36px !important;
+				 line-height: 35px !important;
+		 }
+
+
+		/*  END THE DROPDOWN BITS */
