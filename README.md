@@ -33,4 +33,4 @@ Access value using `+document.getElementById('food-input').value;`
 
 Taken from [experimental trade statistics](https://www.ons.gov.uk/economy/nationalaccounts/balanceofpayments/articles/tradeingoodscountrybycommodityexperimentaldata2011to2016/2018-04-16).
 
-Get dropdown value by `$('#droppy').val()` 
+Get dropdown value by `$('#droppy').val()` or not using jquery `document.getElementById('droppy').value`
