@@ -1,6 +1,7 @@
 		body {
 			max-width:700px;
 			margin:0px auto;
+			font-family: 'Open Sans', Arial, sans-serif;
 		}
 
 		/*  SLIDER CSS */
@@ -88,6 +89,9 @@
 
 		input {
 		  height: 40px;
+			font-size: 16px !important;
+			text-align: right;
+			padding-right:0px !important;
 		}
 
 		.input {
@@ -105,6 +109,21 @@
 		  text-align: center;
 		  float: left;
 		  font-weight: 600;
+		}
+
+		.rightofbox {
+			display: inline-block;
+			height: 40px;
+			width: 40px;
+			margin-right: 0px;
+			color: white;
+			background-color: #003C57;
+			padding-top: 5px;
+			text-align: center;
+			font-weight: 600;
+			font-size: 21px;
+			margin-left: -4px;
+			vertical-align: top;
 		}
 
 		.arrow{
@@ -125,16 +144,113 @@
 		}
 
 		.input-window {
-		  display: inline;
+			display: inline-block;
 		}
 
-		input {
-		  font-size: 16px !important;
-		  text-align: right;
-		  padding-right:0px !important;
+
+		.button {
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			display: inline-block;
+			width: auto;
+			cursor: pointer;
+			text-align: center;
+			border: 0 none;
+			padding: 6px 0;
+			padding: 9px 16px 9px 16px;
+			background-color: #0F8243;
+			font-family: 'Open Sans',Arial,sans-serif;
+			font-weight: 400;
+			font-size: 16px;
+			color: #FFF;
+			filter: inherit;
+			-webkit-appearance: button;
+			transition: background-color 0.25s ease-out;
+			text-decoration: none;
+			-webkit-font-smoothing: antialiased;
 		}
 
+		.button:hover, .button:focus {
+    background-color: #0b5d30;
+}
 		/*  END INPUT BOX */
+
+		/* Button groups */
+		.btn-primary {
+		 background-color:#3b7a9e!important;
+		 color:#fff
+		}
+		.btn-primary:hover {
+		 background-color:#003c57
+		}
+		.btn-primary:focus {
+		 outline:3px solid #f93!important;
+		 outline-offset:-1px;
+		 background-color:#003c57
+		}
+		.form-group {
+		 display:-webkit-box;
+		 display:-ms-flexbox;
+		 display:flex;
+		 cursor:pointer;
+		 height:40px;
+		 box-sizing:border-box;
+		 text-align:center;
+		 margin-bottom:0!important
+		}
+		.label-primary {
+		 padding:6px 4px;
+		 cursor:pointer;
+		 color:#333;
+		 background:#f9f9f9;
+		 width:112px;
+		 border-top:solid 1px #eaeaea;
+		 border-left:solid 1px #eaeaea;
+		 border-bottom:solid 1px #eaeaea;
+		 border-right:solid 1px #eaeaea;
+		 margin-right:2px
+		}
+		.label-primary:hover {
+		 background:#003c57;
+		 color:#fff;
+		 border-color:#003c57
+		}
+		.radio-primary {
+		 display:none
+		}
+		.radio-primary:checked+.label-primary {
+		 background:#3b7a9e;
+		 color:#fff;
+		 border-color:#3b7a9e;
+		 cursor:default
+		}
+		[role=radio]:focus {
+		 outline:2px solid #f93!important;
+		 outline-offset:-1px;
+		 background-color:#3b7a9e;
+		 z-index:1
+		}
+		input:focus,select:focus {
+		 outline:2px solid #f93!important;
+		 outline-offset:-1px;
+		 z-index:1
+		}
+		.form-control {
+		 border-style:solid!important;
+		 border-width:1px!important;
+		 font-size:16px!important;
+		 font-family:open sans,Arial,sans-serif!important;
+		 -webkit-font-smoothing:antialiased!important;
+		 border-color:#414042!important;
+		 padding:0 10px!important;
+		 color:#414042!important;
+		 background-color:#fff!important
+		}
+		.form-control:focus {
+		 outline:2px solid #f93!important;
+		 outline-offset:0!important
+		}
+
 
 
 		/*  Start the DROPDOWN BITS */
