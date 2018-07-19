@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<title>Radio buttons</title>
+    	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    
+    	<style>
+
+      /* Large */
+
+		  label {
+        display: inline-block;
+        cursor: pointer;
+        font-size: 16px;
+        font-family: 'Open Sans',Helvetica,Arial,sans-serif;
+        -webkit-font-smoothing: antialiased;
+        position: relative;
+        padding-left: 42px;
+        margin-right: 32px;
+        padding-top: 8px;
+        color: #414042;
+    }
+
+      input[type=radio] {
+          display: none;
+      }
+
+      label:before {
+          content: "";
+          display: inline-block;
+          width: 32px;
+          height: 32px;
+          position: absolute;
+          background-color: #FFFFFF;
+          border-radius: 16px;
+          border-style: solid;
+          border-width: 1px;
+          border-color: #414042;
+          left: 0;
+          top: 1px;
+      }
+
+      input[type=radio]:checked + label:before {
+          content: url(img/bullet-large.svg);
+          box-shadow: 0 0 0 3px #FF9933;
+      }
+
+      h3 {
+        font-family: 'Open Sans',Arial,sans-serif;
+        -webkit-font-smoothing: antialiased;
+        font-size: 21px;
+        font-weight: 700;
+        color: #414042;
+        padding-top: 16px;
+      }
+
+      p {
+        font-family: 'Open Sans',Arial,sans-serif;
+        -webkit-font-smoothing: antialiased;
+        font-size: 16px;
+        color: #414042;
+      }
+
+
+      /* Medium */
+
+      label.medium {
+        display: inline-block;
+        cursor: pointer;
+        font-size: 16px;
+        font-family: 'Open Sans',Helvetica,Arial,sans-serif;
+        -webkit-font-smoothing: antialiased;
+        position: relative;
+        padding-left: 32px;
+        margin-right: 32px;
+        padding-top: 4px;
+        color: #414042;
+    }
+
+      input.medium[type=radio] {
+          display: none;
+      }
+
+      label.medium:before {
+          content: "";
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          position: absolute;
+          background-color: #FFFFFF;
+          border-radius: 14px;
+          border-style: solid;
+          border-width: 1px;
+          border-color: #414042;
+          left: 0;
+          top: 1px;
+      }
+
+      input.medium[type=radio]:checked + label.medium:before {
+          content: url(img/bullet-medium.svg);
+          box-shadow: 0 0 0 3px #FF9933;
+      }
+
+      /* Small */
+
+      label.small {
+        display: inline-block;
+        cursor: pointer;
+        font-size: 16px;
+        font-family: 'Open Sans',Helvetica,Arial,sans-serif;
+        -webkit-font-smoothing: antialiased;
+        position: relative;
+        padding-left: 26px;
+        margin-right: 32px;
+        padding-top: 0;
+        color: #414042;
+    }
+
+      input.small[type=radio] {
+          display: none;
+      }
+
+      label.small:before {
+          content: "";
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          position: absolute;
+          background-color: #FFFFFF;
+          border-radius: 10px;
+          border-style: solid;
+          border-width: 1px;
+          border-color: #414042;
+          left: 0;
+          top: 2px;
+      }
+
+      input.small[type=radio]:checked + label.small:before {
+          content: url(img/bullet-small.svg);
+          box-shadow: 0 0 0 3px #FF9933;
+      }
+
+
+    </style>
+
+    </head>
+<body>
+
+  <h3> Large radio button</h3>
+
+  <form>
+      <input id="male" type="radio" name="gender" value="male">
+      <label for="male">Male</label>
+      <input id="female" type="radio" name="gender" value="female">
+      <label for="female">Female</label>
+  </form>
+
+  <h3> Medium radio button</h3>
+
+  <form>
+      <input id="male2"  class="medium" type="radio" name="gender2" value="male2">
+      <label for="male2" class="medium">Male</label>
+      <input id="female2" class="medium"type="radio" name="gender2" value="female2">
+      <label for="female2" class="medium">Female</label>
+  </form>
+
+  <h3> Small radio button</h3>
+
+  <form>
+      <input id="male3"  class="small" type="radio" name="gender3" value="male3">
+      <label for="male3" class="small">Male</label>
+      <input id="female3" class="small"type="radio" name="gender3" value="female3">
+      <label for="female3" class="small">Female</label>
+  </form>
+
+  <br>
+
+  <p>Note: For style only, need to be build accessibly. Focus is currently a box-shadow once the button is checked.</p>
+
+</body>
+</html>

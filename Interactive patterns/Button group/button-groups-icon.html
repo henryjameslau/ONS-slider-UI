@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Button groups</title>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <style>
+
+          h3 {
+            font-family: 'Open Sans',Arial,sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-size: 21px;
+            font-weight: 700;
+            color: #414042;
+          }
+
+          p {
+            font-family: 'Open Sans',Arial,sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-size: 16px;
+            color: #414042;
+          }
+          
+          /* Button group styles */
+
+          #primary {
+            margin-bottom: 32px;
+          }
+
+          .btn-form-icon {
+            display: -webkit-inline-box;
+            display: -ms-inline-flexbox;
+            display: inline-flex;
+            font-family: 'Open Sans',Arial,sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 32px;
+          }
+
+          .form-group-icon {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            cursor: pointer;
+            height: 48px;
+            box-sizing: border-box;
+            text-align: center;
+          }
+
+          .form-group-icon:last-child {
+            border-right: solid 1px #A6A8AB;
+          }
+
+          /* Primary button group */
+
+          .label-primary-icon {
+            padding: 12px 16px;
+            cursor: pointer;
+            color: #333;
+            background: #F9F9F9;
+            width: 112px;
+            border-top: solid 1px #A6A8AB;
+            border-left: solid 1px #A6A8AB;
+            border-bottom: solid 1px #A6A8AB;
+          }
+
+          .label-primary-icon:hover {
+            background: #0075A3;
+            color: #fff;
+            border-color: #0075A3;
+          }
+
+          .radio-primary-icon {
+            display: none;
+          }
+
+          .radio-primary-icon:checked + .label-primary-icon.male {
+            background: #003C57;
+            color: #fff;
+            border-color: #003C57;
+            background-image: url("img/male-white.svg");
+            background-repeat: no-repeat;
+          }
+
+          .radio-primary-icon:checked + .label-primary-icon.female {
+            background: #003C57;
+            color: #fff;
+            border-color: #003C57;
+            background-image: url("img/female-white.svg");
+            background-repeat: no-repeat;
+          }
+
+          [role="radio"]:focus {
+            outline: 3px solid #FF9933 !important;
+            outline-offset: -1px;
+            background-color:#003C57;
+            z-index: 1;
+          }
+
+          /* Secondary button group */
+
+          .label-secondary-icon {
+            padding: 12px 16px;
+            cursor: pointer;
+            color: #333;
+            background: #F9F9F9;
+            width: 112px;
+            border-top: solid 1px #A6A8AB;
+            border-left: solid 1px #A6A8AB;
+            border-bottom: solid 1px #A6A8AB;
+          }
+
+          .label-secondary-icon:hover {
+            background: #5F7682;
+            color: #fff;
+            border-color: #5F7682;
+          }
+
+          .radio-secondary-icon:checked + .label-secondary-icon {
+            background: #45565E;
+            color: #fff;
+            border-color: #45565E;
+          }
+
+          .radio-secondary-icon:checked + .label-secondary-icon.male {
+            background: #45565E;
+            color: #fff;
+            border-color: #45565E;
+            background-image: url("img/male-white.svg");
+            background-repeat: no-repeat;
+          }
+
+          .radio-secondary-icon:checked + .label-secondary-icon.female {
+            background: #45565E;
+            color: #fff;
+            border-color: #45565E;
+            background-image: url("img/female-white.svg");
+            background-repeat: no-repeat;
+          }
+
+          .radio-secondary-icon {
+            display: none;
+          }
+
+          /* Neutral button group */
+
+          .label-neutral-icon {
+            padding: 12px 16px;
+            cursor: pointer;
+            color: #333;
+            background: #F9F9F9;
+            width: 112px;
+            border-top: solid 1px #A6A8AB;
+            border-left: solid 1px #A6A8AB;
+            border-bottom: solid 1px #A6A8AB;
+          }
+
+          .label-neutral-icon:hover {
+            background: #EAEAEA;
+          }
+
+          .radio-neutral-icon:checked + .label-neutral-icon {
+            background: #D0D2D3;
+            color: #323132;
+          }
+
+          .radio-neutral-icon:checked + .label-neutral-icon.male-neutral {
+            background: #D0D2D3;
+            color: #323132;
+            background-image: url("img/male.svg");
+            background-repeat: no-repeat;
+          }
+
+          .radio-neutral-icon:checked + .label-neutral-icon.female-neutral {
+            background: #D0D2D3;
+            color: #323132;
+            background-image: url("img/female.svg");
+            background-repeat: no-repeat;
+          }
+
+          .radio-neutral-icon {
+            display: none;
+          }
+
+          /* Teal button group */
+
+          .label-teal-icon {
+            padding: 12px 16px;
+            cursor: pointer;
+            color: #333;
+            background: #F9F9F9;
+            width: 112px;
+            border-top: solid 1px #A6A8AB;
+            border-left: solid 1px #A6A8AB;
+            border-bottom: solid 1px #A6A8AB;
+          }
+
+          .label-teal-icon:hover {
+            background: #008080;
+            color: #FFF;
+            border-color: #008080;
+          }
+
+          .radio-teal-icon:checked + .label-teal-icon {
+            background: #026A6E;
+            color: #FFF;
+            border-color: #026A6E;
+          }
+
+          .radio-teal-icon:checked + .label-teal-icon.male {
+            background: #026A6E;
+            color: #fff;
+            border-color: #026A6E;
+            background-image: url("img/male-white.svg");
+            background-repeat: no-repeat;
+          }
+
+          .radio-teal-icon:checked + .label-teal-icon.female {
+            background: #026A6E;
+            color: #fff;
+            border-color: #026A6E;
+            background-image: url("img/female-white.svg");
+            background-repeat: no-repeat;
+          }
+
+          .radio-teal-icon {
+            display: none;
+          }
+
+          .male {
+            background-image: url("img/male.svg");
+            background-repeat: no-repeat;
+          }
+
+          .male:hover {
+            background-image: url("img/male-white.svg");
+            background-repeat: no-repeat;
+          }
+
+          .female {
+            background-image: url("img/female.svg");
+            background-repeat: no-repeat;
+          }
+
+          .female:hover {
+            background-image: url("img/female-white.svg");
+            background-repeat: no-repeat;
+          }
+
+          .male-neutral {
+            background-image: url("img/male.svg");
+            background-repeat: no-repeat;
+          }
+
+          .male-neutral:hover {
+            background-image: url("img/male.svg");
+            background-repeat: no-repeat;
+          }
+
+          .female-neutral {
+            background-image: url("img/female.svg");
+            background-repeat: no-repeat;
+          }
+
+          .female-neutral:hover {
+            background-image: url("img/female.svg");
+            background-repeat: no-repeat;
+          }
+
+
+
+    </style>
+  
+</head>
+
+<body>
+
+  <h3>Primary button group with icon</h3>
+
+  <form class="btn-form-icon" role="radiogroup">
+    <div class="form-group-icon" role="radio" tabindex="0">
+      <input id="button-1" class="radio-primary-icon" type="radio" name="button" value="1" aria-checked="true" checked>
+      <label class="label-primary-icon male" for="button-1">Male</label>
+    </div>
+    <div class="form-group-icon" role="radio" tabindex="2">
+      <input id="button-2" class="radio-primary-icon" type="radio" name="button" value="2" aria-checked="false">
+      <label class="label-primary-icon female" for="button-2">Female</label>
+    </div>
+  </form>
+
+  <h3>Secondary button group with icon</h3>
+
+  <form class="btn-form-icon" role="radiogroup">
+    <div class="form-group-icon" role="radio" tabindex="3">
+      <input id="button-4" class="radio-secondary-icon" type="radio" name="button" value="4" aria-checked="true" checked>
+      <label class="label-secondary-icon male" for="button-4">Male</label>
+    </div>
+    <div class="form-group-icon" role="radio" tabindex="4">
+      <input id="button-5" class="radio-secondary-icon" type="radio" name="button" value="5" aria-checked="false">
+      <label class="label-secondary-icon female" for="button-5">Female</label>
+    </div>
+  </form>
+
+  <h3>Neutral button group with icon</h3>
+
+  <form class="btn-form-icon" role="radiogroup">
+    <div class="form-group-icon" role="radio" tabindex="5">
+      <input id="button-7" class="radio-neutral-icon" type="radio" name="button" value="7" aria-checked="false" checked>
+      <label class="label-neutral-icon male-neutral" for="button-7">Male</label>
+    </div>
+    <div class="form-group-icon" role="radio" tabindex="6">
+      <input id="button-8" class="radio-neutral-icon" type="radio" name="button" value="8" aria-checked="false">
+      <label class="label-neutral-icon female-neutral" for="button-8">Female</label>
+    </div>
+  </form>
+
+  <h3>Teal button group</h3>
+
+  <form class="btn-form-icon" role="radiogroup">
+    <div class="form-group-icon" role="radio" tabindex="7">
+      <input id="button-10" class="radio-teal-icon" type="radio" name="button" value="10" aria-checked="true" checked>
+      <label class="label-teal-icon male" for="button-10">Male</label>
+    </div>
+    <div class="form-group-icon" role="radio" tabindex="8">
+      <input id="button-11" class="radio-teal-icon" type="radio" name="button" value="11" aria-checked="false">
+      <label class="label-teal-icon female" for="button-11">Female</label>
+    </div>
+  </form>
+
+  <p>Note: Need the option to drop an SVG icon on to button groups.</p>
+
+
+
+
+</body>
+</html>

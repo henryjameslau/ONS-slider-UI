@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Typography</title>
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+      <style>
+
+      /* Typography */
+
+      body {
+        font-family: 'Open Sans',Arial,sans-serif;
+        -webkit-font-smoothing: antialiased;
+        color: #414042;
+      }
+
+      h1.interactive {
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 40px;
+        margin: 0 0 24px 0;
+      }
+
+      h2.interactive {
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 32px;
+        margin: 32px 0 24px 0;
+      }
+
+      h3.interactive {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 32px;
+        margin: 16px 0 24px 0;
+      }
+
+      h4.interactive {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 24px;
+        margin: 16px 0 24px 0;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 24px;
+        margin: 8px 0 24px 0;
+        padding: 0;
+      }
+
+      .small {
+        font-size: 14px;
+        line-height: 16px;
+        margin: 8px 0 16px 0;
+        padding: 0;
+      }
+
+      .button {
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .teal {
+        color: #008080;
+      }
+
+      .slate {
+        color: #5F7682;
+      }
+
+      .onsblue {
+        color: #003C57;
+      }
+
+      .blue {
+        color: #0075A3;
+      }
+
+      li {
+        padding-bottom: 8px;
+      }
+
+
+      /* Table styles */
+
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 16px 0;
+      } 
+
+      td, th {
+          border-bottom: 1px solid #D0D2D3;
+          border-top: 1px solid #D0D2D3;
+          text-align: left;
+          padding: 8px;
+          width: 33.33333333%
+      }
+
+      th {
+        background-color: #EAEAEA;
+      }
+
+      .table {
+        padding: 0;
+        margin: 0;
+      }
+
+      .table-text {
+        padding: 0;
+        margin: 8px 0 0 0;
+        font-size: 12px;
+        line-height: 16px;
+      }
+
+      /* 321px to 599px */
+
+      @media screen and (max-width: 590px) {
+
+      h1.interactive {
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 40px;
+        margin: 0 0 24px 0;
+      }
+
+      h2.interactive {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 32px;
+        margin: 32px 0 24px 0;
+      }
+
+      h3.interactive {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 32px;
+        margin: 16px 0 24px 0;
+      }
+
+      h4.interactive {
+        font-size: 17px;
+        font-weight: 700;
+        line-height: 24px;
+        margin: 16px 0 24px 0;
+      }
+
+      .button {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      }
+
+      /* 320px */
+
+      @media screen and (max-width: 320px) {
+
+      h1.interactive {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 40px;
+        margin: 0 0 24px 0;
+      }
+
+      h2.interactive {
+        font-size: 19px;
+        font-weight: 700;
+        line-height: 32px;
+        margin: 32px 0 24px 0;
+      }
+
+      h3.interactive {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 32px;
+        margin: 16px 0 24px 0;
+      }
+
+      h4.interactive {
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 24px;
+        margin: 16px 0 24px 0;
+      }
+
+      .button {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      }
+
+
+      </style>
+
+  </head>
+
+  <body>
+
+    <h2>Typography</h2>
+
+    <p>Most interactive products are built with syndication in mind. From research conducted, column widths for embedding content can vary from 592px wide on the BBC, 620px wide on the Guardian to 700px wide on the ONS website for example (desktop views).</p>
+
+        <p>We need to design our interactive products with syndication and the ONS website in mind.</p>
+
+        <p>Break points on the ONS website are:</p>
+
+            <ul>
+              <li>Desktop (992px and up)</li>
+              <li>Tablet (768px to 991px)</li>
+              <li>Mobile (up to 767px) are 100% wide</li>
+            </ul>
+
+        <h3>Break points for interactive content</h3>  
+
+        <p>To make sure the design of our interactive products are optimised for different devices, we need consider additional/different break points for our content. These should be consistent on all interactive products.</p>
+
+        <ul>
+          <li>590px to 767px</li>
+          <li>321px to 589px</li>
+          <li>320px</li>
+        </ul>
+
+    <h3>Suggested typographic matrix</h3>
+
+
+    <table>
+      <tr>
+        <th>320</th>
+        <th>321-590</th>
+        <th>590+</th>
+      </tr>
+      <tr>
+        <td><h1 class="table" style="font-size:24px;">Heading 1</h1><p class="table-text">Open Sans Bold &#8226; 24px</p></td>
+        <td><h1 class="table" style="font-size:26px;">Heading 1</h1><p class="table-text">Open Sans Bold &#8226; 26px</p></td>
+        <td><h1 class="table">Heading 1</h1><p class="table-text">Open Sans Bold &#8226; 30px</p></td>
+      </tr>
+      <tr>
+        <td><h2 class="table" style="font-size:20px;">Heading 2</h2><p class="table-text">Open Sans Bold &#8226; 19px</p></td>
+        <td><h2 class="table" style="font-size:22px;">Heading 2</h2><p class="table-text">Open Sans Bold &#8226; 20px</p></td>
+        <td><h2 class="table">Heading 2</h2><p class="table-text">Open Sans Bold &#8226; 22px</p></td>
+      </tr>
+      <tr>
+        <td><h3 class="table" style="font-size:18px;">Heading 3</h3><p class="table-text">Open Sans Bold &#8226; 18px</p></td>
+        <td><h3 class="table" style="font-size:19px;">Heading 3</h3><p class="table-text">Open Sans Bold &#8226; 18px</p></td>
+        <td><h3 class="table">Heading 3</h3><p class="table-text">Open Sans Bold &#8226; 20px</p></td>
+      </tr>
+      <tr>
+        <td><h4 class="table" style="font-size:17px;">Heading 4</h4><p class="table-text">Open Sans Bold &#8226; 17px</p></td>
+        <td><h4 class="table" style="font-size:17px;">Heading 4</h4><p class="table-text">Open Sans Bold &#8226; 17px</p></td>
+        <td><h4 class="table">Heading 4</h4><p class="table-text">Open Sans Bold &#8226; 18px</p></td>
+      </tr>
+      <tr>
+        <td><p class="table">Body copy</p><p class="table-text">Open Sans Regular &#8226; 16px</p></td>
+        <td><p class="table">Body copy</p><p class="table-text">Open Sans Regular &#8226; 16px</p></td>
+        <td><p class="table">Body copy</p><p class="table-text">Open Sans Regular &#8226; 16px</p></td>
+      </tr>
+      <tr>
+        <td><p class="table small">Small body copy</p><p class="table-text">Open Sans Regular &#8226; 14px</p></td>
+        <td><p class="table small">Small body copy</p><p class="table-text">Open Sans Regular &#8226; 14px</p></td>
+        <td><p class="table small">Small body copy</p><p class="table-text">Open Sans Regular &#8226; 14px</p></td>
+      </tr>
+    </table>
+    <br>
+
+    <h3>Colour options</h3>
+      <p>Interactive heading colours should remain consistent with the ONS website (Ship Grey #414042).</p>
+      <p>If you need a highlight colour for text within your interactive, use these colour alternatives.
+
+      <h1 class="onsblue">ONS Blue text</h1>
+      <h1 class="blue">Blue text</h1>
+      <h1 class="slate">Slate text</h1>
+      <h1 class="teal">Teal text</h1>
+
+    
+
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Postcode search</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    
+    <style>
+	
+
+    #postcode-wrapper {
+      width: 304px;
+      display: inline-block;
+      float: left;
+    }
+
+    #pcInput {
+      width: 192px;
+      height: 40px;
+      border-style: solid;
+      border-width: 1px;
+      padding-left: 8px;
+      padding-right: 8px;
+      font-size: 16px;
+      font-family: 'Open Sans', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      border-color: #414042;
+    }
+		
+		.btnSearch {
+			height: 40px;
+			border: none;
+			width: 40px;
+			background-color: #206095;
+			vertical-align: top;
+			margin-left: -4px;
+			cursor: pointer;
+			padding: 0;
+		}
+
+		button:focus {
+			outline: 3px solid #FF9933 !important;
+    	outline-offset: 0;
+		}
+
+		.btnSearch:hover {
+			background-color: #003C57;
+			position: relative;
+		}
+
+		input[type=search] {
+			position: relative;
+			color: #777777 !important;
+		}
+
+		input[type=search]:focus {
+    	outline: 3px solid #FF9933 !important;
+    	outline-offset: 0;
+    	color: #414042 !important;
+    } 
+
+    p.form-text {
+    	font-size: 16px;
+    	line-height: 24px;
+      padding: 0 0 8px 0;
+      margin: 0;
+      font-family: 'Open Sans', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      border-color: #414042;
+    }
+
+    .btn-primary1 {
+      background-color: #0F8243;
+      color: #fff;
+    }
+    
+    .btn-primary1:hover,.btn-primary1:focus {
+      background-color:#206095;
+    }
+
+    .icon:after {
+      content: url('../img/location.svg');
+      position: absolute;
+      top: 0;
+      margin-left: -6px;
+    }
+
+	</style>
+
+  </head>
+    
+  <body>
+
+        <div id="postcode-wrapper">
+          <p class="form-text">Enter your postcode</p>
+            <form id="pcForm">
+              <input id="pcInput" type="search" tabindex="1" onfocus="if(this.value == 'e.g NP10 8XG') { this.value = '';}" value="e.g NP10 8XG" onblur="if(this.value == '') { this.value = 'e.g NP10 8XG'}" value="e.g NP10 8XG">
+              <button class="btnSearch" type="submit"><img src="img/search.svg"></button>
+            </form>
+        </div>
+
+
+  </body>     
+
+
+</html>
+
