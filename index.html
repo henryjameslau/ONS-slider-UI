@@ -63,7 +63,7 @@
     </div>
 
     <h3>Button Groups</h3>
-    
+
     <div class="form-group form-group-fullwidth" role="radio" tabindex="0">
     <input id="button-16" class="radio-primary radio-primary-fullwidth" name="button-scotland" value="1" aria-checked="false" type="radio">
     <label class="label-primary label-primary-fullwidth" for="button-16">Yes</label>
@@ -112,7 +112,7 @@
 
    dropdownData=["A","B","C"]
 
-   d3.select("#dropdown").append("select").attr("id","droppy").attr("style","width:400px")
+   d3.select("#dropdown").append("select").attr("id","droppy").attr("style","width:100%")
 
    //blank option for placeholder
    d3.select("#droppy").append("option")
@@ -122,7 +122,7 @@
    .attr("value", function(d){return d})
    .text(function(d){return d});
 
-    $('#droppy').select2({placeholder:"Placeholder Text",allowClear:true})
+    $('#droppy').select2({placeholder:"Placeholder Text",allowClear:true,width: 'resolve' })
 
 
 
