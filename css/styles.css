@@ -94,6 +94,10 @@
 			padding-right:5px !important;
 		}
 
+		input.chosen-search-input {
+			text-align:left;
+		}
+
 		.input {
 		  margin-bottom: 10px;
 		}
@@ -149,8 +153,8 @@
 
 
 		.button {
-			-moz-box-sizing: border-box;
-			box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			        box-sizing: border-box;
 			display: inline-block;
 			width: auto;
 			cursor: pointer;
@@ -163,8 +167,10 @@
 			font-weight: 400;
 			font-size: 16px;
 			color: #FFF;
-			filter: inherit;
+			-webkit-filter: inherit;
+			        filter: inherit;
 			-webkit-appearance: button;
+			-webkit-transition: background-color 0.25s ease-out;
 			transition: background-color 0.25s ease-out;
 			text-decoration: none;
 			-webkit-font-smoothing: antialiased;
@@ -194,7 +200,8 @@
 		 display:flex;
 		 cursor:pointer;
 		 height:40px;
-		 box-sizing:border-box;
+		 -webkit-box-sizing:border-box;
+		         box-sizing:border-box;
 		 text-align:center;
 		 margin-bottom:0!important
 		}
@@ -294,11 +301,7 @@
 
 		 .select2-container--default .select2-selection--single .select2-selection__arrow {
 				 background-image: -khtml-gradient(linear, left top, left bottom, from(#3b7a9e), to(#3b7a9e));
-				 background-image: -moz-linear-gradient(top, #3b7a9e, #3b7a9e);
-				 background-image: -ms-linear-gradient(top, #3b7a9e, #3b7a9e);
-				 background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3b7a9e), color-stop(100%, #3b7a9e));
-				 background-image: -webkit-linear-gradient(top, #3b7a9e, #3b7a9e);
-				 background-image: -o-linear-gradient(top, #3b7a9e, #3b7a9e);
+				 background-image: -webkit-gradient(linear, left top, left bottom, from(#3b7a9e), to(#3b7a9e));
 				 background-image: linear-gradient(#3b7a9e, #3b7a9e);
 				 /* width: 40px; */
 				 /* color: #fff; */

@@ -130,14 +130,15 @@
     $('#droppy').select2({placeholder:"Placeholder Text",allowClear:true,width: 'resolve' })
 
     //blank option for placeholder
-    d3.select("#droppy2").append("option")
+
     d3.select("#dropdown2").append("select").attr("id","droppy2").attr("style","width:100%").attr("data-placeholder","Place holder text")
+    d3.select("#droppy2").append("option")
     d3.select("#droppy2").selectAll("p").data(dropdownData).enter().append("option")
     .attr("value", function(d){return d})
     .text(function(d){return d});
 
     $('#droppy2').chosen({
-      allow_single_deselect:true
+      allow_single_deselect: true
     })
 
 	} //end initialise
